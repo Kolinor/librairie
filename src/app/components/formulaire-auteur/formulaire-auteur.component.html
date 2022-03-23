@@ -1,0 +1,17 @@
+<form [formGroup]="auteurForm">
+  <div class="mb-3 mt-3">
+    <label class="form-label">Nom :</label>
+    <input type="lastname" formControlName="nom" class="form-control" id="nom" placeholder="Nom de l'auteur..."
+           name="lastname">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Prénom :</label>
+    <input type="name" formControlName="prenom" class="form-control" id="prenom" placeholder="Prénom de l'auteur"
+           name="name">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Age :</label>
+    <input type="number" formControlName="age" class="form-control" id="age" placeholder="Age de l'auteur" name="year">
+  </div>
+  <button type="valider" class="btn btn-primary" (click)="onValider()">Valider</button>
+</form>

@@ -1,0 +1,31 @@
+<form [formGroup]="livreForm">
+  <div class="mb-3 mt-3">
+    <label class="form-label">Titre:</label>
+    <input type="text" formControlName="titre" class="form-control" id="titre" placeholder="Titre du livre..."
+           name="titre">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Auteur :</label>
+    <input type="text" formControlName="auteurLivre" class="form-control" id="auteurLivre"
+           placeholder="Auteur du livre..." name="auteur">
+  </div>
+  <!--  <div formArrayName="numbers">-->
+  <!--    &lt;!&ndash; iterate the array of phone numbers &ndash;&gt;-->
+  <!--    <div *ngFor="let number of userForm.controls.numbers.controls; let i = index" >-->
+  <!--      <label>PhoneNumber {{i+1}} </label>-->
+  <!--      <input formControlName="{{i}}" />-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <div class="mb-3">
+    <label class="form-label">Date de publication :</label>
+    <input type="date" formControlName="datePublication" class="form-control" id="datePublication"
+           placeholder="Date de publication..." name="datePublication">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="comment">Résumé histoire (4ème couverture) :</label>
+    <textarea class="form-control" formControlName="comment" rows="5" id="comment" name="text"
+              placeholder="Synthèse du livre..."></textarea>
+  </div>
+
+  <button type="Valider" class="btn btn-primary" (click)="onValider()">Valider</button>
+</form>
