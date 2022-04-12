@@ -17,10 +17,12 @@
       <td>{{auteur.getNom()}}</td>
       <td>{{auteur.getAge()}}</td>
       <td>
-        <button><i class="far fa-edit" (click)="onModify(auteur)"></i></button>
+        <a class="btn">
+          <i class="icon-edit" (click)="onModify(auteur)"></i></a>
       </td>
       <td>
-        <button><i class="far fa-trash-alt" (click)="onDelete(auteur.getAuteurId())"></i></button>
+        <a class="btn">
+          <i class="icon-trash" (click)="onDelete(auteur.getAuteurId())"></i></a>
       </td>
     </tr>
     </tbody>
