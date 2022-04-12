@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuteursService} from "../../services/auteurs/auteurs.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Auteur} from "../../models/auteur/auteur.model";
 
 @Component({
   selector: 'app-auteurs',
@@ -23,25 +24,21 @@ export class AuteursComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onModify(): void {
+  onModify(auteur: Auteur): void {
 
 
 
   }
 
-  onDelete(): void {
-
-
+  onDelete(auteurId: Number): void {
+    this.auteursService.deleteAuteur(auteurId);
   }
 
   onValider(): void {
-
     const nom = this.auteurForm.get('nom')?.value
     const prenom = this.auteurForm.get('prenom')?.value
     const age = this.auteurForm.get('age')?.value
 
     this.auteursService.addAuteur(nom, prenom, age, [])
-
-
   }
 }

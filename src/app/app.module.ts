@@ -12,6 +12,7 @@ import {FormulaireLivreComponent} from './components/formulaire-livre/formulaire
 import {AuteursService} from "./services/auteurs/auteurs.service";
 import {LivresService} from "./services/livres/livres.service";
 import {ReactiveFormsModule} from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     AuteursService,
