@@ -26,8 +26,6 @@ export class AuteursComponent implements OnInit {
 
   onModify(auteur: Auteur): void {
 
-
-
   }
 
   onDelete(auteurId: Number): void {

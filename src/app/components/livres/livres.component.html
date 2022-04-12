@@ -24,7 +24,8 @@
         <button><i class="far fa-edit" (click)="onModify(livres)"></i></button>
       </td>
       <td>
-        <button><i class="far fa-trash-alt" (click)="onDelete(livres.getLivreId())"></i></button>
+        <a class="btn">
+          <i class="icon-trash" (click)="onDelete(livres.getLivreId())"></i></a>
       </td>
     </tr>
 
