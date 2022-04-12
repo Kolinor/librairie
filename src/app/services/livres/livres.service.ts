@@ -20,7 +20,7 @@ export class LivresService {
     this.livres?.push(new Livre(titre, genre, resume, auteur, dateParution));
   }
 
-  modifyLibre(titre: String | undefined, genre: String | undefined, resume: String | undefined, auteur: Auteur | undefined, dateParution: String | undefined){
+  modifyLivre(titre: String | undefined, genre: String | undefined, resume: String | undefined, auteur: Auteur | undefined, dateParution: String | undefined){
     this.livres?.push(new Livre(titre, genre, resume, auteur, dateParution));
 
   }
