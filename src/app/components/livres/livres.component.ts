@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuteursService} from "../../services/auteurs/auteurs.service";
 import {LivresService} from "../../services/livres/livres.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Livre} from "../../models/livre/livre.model";
 
 @Component({
   selector: 'app-livres',
@@ -27,18 +28,18 @@ export class LivresComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onModify(): void {
+  onModify(livre : Livre): void {
 
   }
 
-  onDelete(): void {
-    this.livresService.deleteLivre()
+  onDelete(livreId : Number): void {
+    this.livresService.deleteLivre(livreId);
 
 
 
   }
 
-  onValider(): void{
+  onValider(): void {
 
     const titre = this.livresForm.get('titre')?.value
     const genre = this.livresForm.get('genre')?.value

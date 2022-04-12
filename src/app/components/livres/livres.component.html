@@ -21,10 +21,10 @@
       <td>{{livres.getAuteur()}}</td>
       <td>{{livres.getParution()}}</td>
       <td>
-        <button><i class="far fa-edit" (click)="onModify()"></i></button>
+        <button><i class="far fa-edit" (click)="onModify(livres)"></i></button>
       </td>
       <td>
-        <button><i class="far fa-trash-alt" (click)="onDelete()"></i></button>
+        <button><i class="far fa-trash-alt" (click)="onDelete(livres.getLivreId())"></i></button>
       </td>
     </tr>
 
