@@ -25,4 +25,55 @@
     </tr>
     </tbody>
   </table>
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Ajouter
+  </button>
+</div>
+
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="mb-3 mt-3">
+            <label class="form-label">Nom :</label>
+            <input type="lastname" formControlName="nom" class="form-control" id="nom" placeholder="Nom de l'auteur..."
+                   name="lastname">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Prénom :</label>
+            <input type="name" formControlName="prenom" class="form-control" id="prenom" placeholder="Prénom de l'auteur"
+                   name="name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Age :</label>
+            <input type="number" formControlName="age" class="form-control" id="age" placeholder="Age de l'auteur" name="year">
+          </div>
+          <button type="valider" class="btn btn-primary">Valider</button>
+        </form>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="Valider" class="btn btn-primary" >Créer</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+      </div>
+
+    </div>
+  </div>
 </div>

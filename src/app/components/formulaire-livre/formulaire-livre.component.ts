@@ -16,6 +16,7 @@ export class FormulaireLivreComponent implements OnInit {
     this.livresService = livresService;
     this.livreForm = fb.group({
       titre: '',
+      genre: '',
       datePublication: '',
       auteurLivre: '',
       comment: '',

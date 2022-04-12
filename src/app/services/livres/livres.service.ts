@@ -16,7 +16,7 @@ export class LivresService {
     return this.livres;
   }
 
-  addLivre(titre: String | undefined, resume: String | undefined, auteur: Auteur | undefined, dateParution: Date | undefined) {
-    this.livres?.push(new Livre(titre, resume, auteur, dateParution));
+  addLivre(titre: String | undefined, genre: String | undefined, resume: String | undefined, auteur: Auteur | undefined, dateParution: Date | undefined) {
+    this.livres?.push(new Livre(titre, genre, resume, auteur, dateParution));
   }
 }
