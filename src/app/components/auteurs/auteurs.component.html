@@ -17,17 +17,17 @@
       <td>{{auteur.getNom()}}</td>
       <td>{{auteur.getAge()}}</td>
       <td>
-        <i class="fa fa-edit" (click)="onModify()"></i>
+        <button><i class="far fa-edit" (click)="onModify()"></i></button>
       </td>
       <td>
-        <i class="fa fa-trash-o" (click)="onDelete()"></i>
+        <button><i class="far fa-trash-alt" (click)="onDelete()"></i></button>
       </td>
     </tr>
     </tbody>
   </table>
 
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Ajouter
+    Ajouter un auteur
   </button>
 </div>
 
@@ -42,13 +42,13 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title">Ajouter un auteur</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        <form>
+        <form [formGroup]="auteurForm">
           <div class="mb-3 mt-3">
             <label class="form-label">Nom :</label>
             <input type="lastname" formControlName="nom" class="form-control" id="nom" placeholder="Nom de l'auteur..."
@@ -63,14 +63,14 @@
             <label class="form-label">Age :</label>
             <input type="number" formControlName="age" class="form-control" id="age" placeholder="Age de l'auteur" name="year">
           </div>
-          <button type="valider" class="btn btn-primary">Valider</button>
+
         </form>
 
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="Valider" class="btn btn-primary" >Créer</button>
+        <button type="Valider" class="btn btn-primary" (click)="onValider()">Créer</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
       </div>
 

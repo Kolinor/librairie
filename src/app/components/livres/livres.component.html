@@ -9,9 +9,24 @@
       <th>Resume</th>
       <th>Auteur</th>
       <th>Date de parution</th>
+      <th>Modifier</th>
+      <th>Supprimer</th>
     </tr>
     </thead>
     <tbody>
+    <tr *ngFor="let livres of livresService.getLivres() ">
+      <td>{{livres.getTitre()}}</td>
+      <td>{{livres.getGenre()}}</td>
+      <td>{{livres.getResume()}}</td>
+      <td>{{livres.getAuteur()}}</td>
+      <td>{{livres.getParution()}}</td>
+      <td>
+        <button><i class="far fa-edit" (click)="onModify()"></i></button>
+      </td>
+      <td>
+        <button><i class="far fa-trash-alt" (click)="onDelete()"></i></button>
+      </td>
+    </tr>
 
     </tbody>
   </table>
@@ -31,13 +46,13 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Livres</h4>
+        <h4 class="modal-title">Ajouter un livre</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        <form>
+        <form [formGroup]="livresForm">
           <div class="mb-3 mt-3">
             <label class="form-label">Titre:</label>
             <input type="text" formControlName="titre" class="form-control" id="titre" placeholder="Titre du livre..."
@@ -50,7 +65,7 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Auteur :</label>
-            <input type="text" formControlName="auteurLivre" class="form-control" id="auteurLivre"
+            <input type="text" formControlName="auteur" class="form-control" id="auteur"
                    placeholder="Auteur du livre..." name="auteur">
           </div>
           <!--  <div formArrayName="numbers">-->
@@ -62,12 +77,12 @@
           <!--  </div>-->
           <div class="mb-3">
             <label class="form-label">Date de publication :</label>
-            <input type="date" formControlName="datePublication" class="form-control" id="datePublication"
-                   placeholder="Date de publication..." name="datePublication">
+            <input type="date" formControlName="dateParution" class="form-control" id="dateParution"
+                   placeholder="Date de publication..." name="dateParution">
           </div>
           <div class="mb-3 mt-3">
-            <label for="comment">Résumé histoire (4ème couverture) :</label>
-            <textarea class="form-control" formControlName="comment" rows="5" id="comment" name="text"
+            <label for="resume">Résumé histoire (4ème couverture) :</label>
+            <textarea class="form-control" formControlName="resume" rows="5" id="resume" name="text"
                       placeholder="Synthèse du livre..."></textarea>
           </div>
 
@@ -78,7 +93,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="Valider" class="btn btn-primary" >Créer</button>
+        <button type="Valider" class="btn btn-primary" (click)="onValider()">Créer</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
       </div>
 

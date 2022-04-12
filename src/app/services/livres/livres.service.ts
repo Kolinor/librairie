@@ -16,7 +16,17 @@ export class LivresService {
     return this.livres;
   }
 
-  addLivre(titre: String | undefined, genre: String | undefined, resume: String | undefined, auteur: Auteur | undefined, dateParution: Date | undefined) {
+  addLivre(titre: String | undefined, genre: String | undefined, resume: String | undefined, auteur: Auteur | undefined, dateParution: String | undefined) {
     this.livres?.push(new Livre(titre, genre, resume, auteur, dateParution));
   }
+
+  modifyLibre(titre: String | undefined, genre: String | undefined, resume: String | undefined, auteur: Auteur | undefined, dateParution: String | undefined){
+    this.livres?.push(new Livre(titre, genre, resume, auteur, dateParution));
+
+  }
+
+  deleteLivre() {
+    this.livres?.pop();
+  }
+
 }
