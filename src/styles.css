@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar-expand-sm .navbar-collapse {
+  justify-content: center;
+}
+.body {
+  background: ghostwhite;
+}
+.menu {
+  margin-top: 0px;
+  /*
+  background: linear-gradient(
+          to left,
+          rgb(20, 228, 255) 0%,
+          rgb(17, 0, 255) 60%,
+          rgb(6, 214, 172) 100% )
+  bottom #f8f9fa no-repeat;*/
+
+  background: linear-gradient(to right, #924BFD 50%, #08D8D8);
+}
+.nav-link{
+  color: white !important;
+  justify-content: center;
+  letter-spacing: .1rem;
+}
+.navbar {
+  box-shadow: 1px 1px 12px #555;
+}
+.nav-link:hover {
+  color:  rgba(255,255,255,.75) !important;
+}
