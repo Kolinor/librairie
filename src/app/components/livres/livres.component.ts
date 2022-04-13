@@ -14,7 +14,6 @@ export class LivresComponent implements OnInit {
   auteurService: AuteursService;
   public livresForm: FormGroup;
 
-
   constructor(livresService: LivresService, auteurService: AuteursService, fb: FormBuilder) {
     this.livresService = livresService;
     this.auteurService = auteurService;
@@ -36,22 +35,16 @@ export class LivresComponent implements OnInit {
 
   onDelete(livreId : Number): void {
     this.livresService.deleteLivre(livreId);
-
-
-
   }
 
   onValider(): void {
+    const titre = this.livresForm.get('titre')?.value;
+    const genre = this.livresForm.get('genre')?.value;
+    const resume = this.livresForm.get('resume')?.value;
+    const auteur = this.livresForm.get('auteur')?.value;
+    const dateParution = this.livresForm.get('dateParution')?.value;
 
-    const titre = this.livresForm.get('titre')?.value
-    const genre = this.livresForm.get('genre')?.value
-    const resume = this.livresForm.get('resume')?.value
-    const auteur = this.livresForm.get('auteur')?.value
-    const dateParution = this.livresForm.get('dateParution')?.value
-
-    this.livresService.addLivre(titre, genre, resume, auteur, dateParution)
-
-
+    this.livresService.addLivre(titre, genre, resume, Number(auteur), dateParution);
   }
 
 }

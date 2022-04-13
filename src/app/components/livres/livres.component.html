@@ -18,7 +18,7 @@
       <td>{{livres.getTitre()}}</td>
       <td>{{livres.getGenre()}}</td>
       <td>{{livres.getResume()}}</td>
-      <td>{{livres.getAuteur()}}</td>
+      <td>{{livres.getAuteur()?.getNom()}} {{livres.getAuteur()?.getPrenom()}}</td>
       <td>{{livres.getParution()}}</td>
       <td>
         <a class="btn">
@@ -67,8 +67,8 @@
 
           <div class="mb-3">
           <label for="auteurs" class="form-label">Sélectionner un auteur : </label>
-            <select class="form-select" id="auteurs" name="auteurs">
-              <option *ngFor="let auteur of auteurService.getAuteurs()">{{auteur.getNom()+' '+ auteur.getPrenom()}}</option>
+            <select  formControlName="auteur" class="form-select" id="auteurs" name="auteur">
+              <option *ngFor="let auteur of auteurService.getAuteurs()" [value]="auteur.getAuteurId()">{{auteur.getNom()+' '+ auteur.getPrenom()}}</option>
             </select>
           </div>
 
