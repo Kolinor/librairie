@@ -39,8 +39,6 @@
 </div>
 
 
-
-
 <!-- The Modal -->
 <div class="modal" id="myModal">
   <div class="modal-dialog">
@@ -64,19 +62,22 @@
             <label class="form-label">Genre:</label>
             <input type="text" formControlName="genre" class="form-control" id="genre" placeholder="Genre du livre..."
                    name="genre">
-          </div>
+<!--          </div>-->
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label">Auteur :</label>-->
+<!--            <input type="text" formControlName="auteur" class="form-control" id="auteur"-->
+<!--                   placeholder="Auteur du livre..." name="auteur">-->
+<!--          </div>-->
+
           <div class="mb-3">
-            <label class="form-label">Auteur :</label>
-            <input type="text" formControlName="auteur" class="form-control" id="auteur"
-                   placeholder="Auteur du livre..." name="auteur">
+            <label for="auteur" class="form-label">Sélectionner un auteur : </label>
+            <input class="form-control" list="auteurs" name="auteurs" id="autors">
+            <datalist id="auteurs">
+              <option *ngFor="let auteur of auteurService.getAuteurs()" value="{{auteur.getNom()+' '+ auteur.getPrenom()}}"></option>
+              <option value="Edge">
+
+            </datalist>
           </div>
-          <!--  <div formArrayName="numbers">-->
-          <!--    &lt;!&ndash; iterate the array of phone numbers &ndash;&gt;-->
-          <!--    <div *ngFor="let number of userForm.controls.numbers.controls; let i = index" >-->
-          <!--      <label>PhoneNumber {{i+1}} </label>-->
-          <!--      <input formControlName="{{i}}" />-->
-          <!--    </div>-->
-          <!--  </div>-->
           <div class="mb-3">
             <label class="form-label">Date de publication :</label>
             <input type="date" formControlName="dateParution" class="form-control" id="dateParution"
@@ -95,7 +96,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="Valider" class="btn btn-primary" (click)="onValider()"  data-bs-dismiss="modal">Créer</button>
+        <button type="Valider" class="btn btn-primary" (click)="onValider()" data-bs-dismiss="modal">Créer</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
       </div>
 

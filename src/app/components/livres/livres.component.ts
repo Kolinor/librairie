@@ -11,11 +11,13 @@ import {Livre} from "../../models/livre/livre.model";
 })
 export class LivresComponent implements OnInit {
   livresService: LivresService;
+  auteurService: AuteursService;
   public livresForm: FormGroup;
 
 
-  constructor(livresService: LivresService, fb: FormBuilder) {
+  constructor(livresService: LivresService, auteurService: AuteursService, fb: FormBuilder) {
     this.livresService = livresService;
+    this.auteurService = auteurService;
     this.livresForm = fb.group({
       titre: '',
       genre: '',
