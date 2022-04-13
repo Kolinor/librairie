@@ -58,31 +58,29 @@
             <input type="text" formControlName="titre" class="form-control" id="titre" placeholder="Titre du livre..."
                    name="titre">
           </div>
+
           <div class="mb-3 mt-3">
             <label class="form-label">Genre:</label>
             <input type="text" formControlName="genre" class="form-control" id="genre" placeholder="Genre du livre..."
                    name="genre">
           </div>
-<!--          <div class="mb-3">-->
-<!--            <label class="form-label">Auteur :</label>-->
-<!--            <input type="text" formControlName="auteur" class="form-control" id="auteur"-->
-<!--                   placeholder="Auteur du livre..." name="auteur">-->
-<!--          </div>-->
 
           <div class="mb-3">
-            <label for="auteur" class="form-label">Sélectionner un auteur : </label>
-            <input class="form-control" list="auteurs" name="auteurs" id="autors">
-            <datalist id="auteurs">
-              <option *ngFor="let auteur of auteurService.getAuteurs()" value="{{auteur.getNom()+' '+ auteur.getPrenom()}}"></option>
-              <option value="Edge">
-
-            </datalist>
+          <label for="auteurs" class="form-label">Sélectionner un auteur : </label>
+            <select class="form-select" id="auteurs" name="auteurs">
+              <option *ngFor="let auteur of auteurService.getAuteurs()">{{auteur.getNom()+' '+ auteur.getPrenom()}}</option>
+            </select>
           </div>
+
+
+
           <div class="mb-3">
             <label class="form-label">Date de publication :</label>
             <input type="date" formControlName="dateParution" class="form-control" id="dateParution"
                    placeholder="Date de publication..." name="dateParution">
           </div>
+
+
           <div class="mb-3 mt-3">
             <label for="resume">Résumé histoire (4ème couverture) :</label>
             <textarea class="form-control" formControlName="resume" rows="5" id="resume" name="text"
