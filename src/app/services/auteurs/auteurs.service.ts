@@ -18,7 +18,8 @@ export class AuteursService {
       headers
     };
 
-    this.http.get('http://192.168.1.191:3001/autors', requestOptions).subscribe({
+    // this.http.get('http://192.168.1.191:3001/autors', requestOptions).subscribe({
+    this.http.get('http://192.168.131.33:3001/autors', requestOptions).subscribe({
       next: data => {
         const resultats: any = data;
         // @ts-ignore
@@ -43,7 +44,8 @@ export class AuteursService {
     const requestOptions = {
       headers
     };
-    this.http.post('http://192.168.1.191:3001/autors', {
+    // this.http.post('http://192.168.1.191:3001/autors', {
+    this.http.post('http://192.168.131.33:3001/autors', {
       nom,
       prenom,
       age
@@ -65,7 +67,8 @@ export class AuteursService {
     const requestOptions = {
       headers
     };
-    this.http.delete('http://192.168.1.191:3001/autor/' + auteurId, requestOptions).subscribe({
+    // this.http.delete('http://192.168.1.191:3001/autor/' + auteurId, requestOptions).subscribe({
+    this.http.delete('http://192.168.131.33:3001/autor/' + auteurId, requestOptions).subscribe({
       next: data => {
         const index = this.auteurs.findIndex(auteur => auteur.getAuteurId() === auteurId);
         this.auteurs.splice(index, 1);

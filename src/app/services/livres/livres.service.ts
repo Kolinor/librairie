@@ -21,7 +21,8 @@ export class LivresService {
       headers
     };
 
-    this.http.get('http://192.168.1.191:3001/livres', requestOptions).subscribe({
+    // this.http.get('http://192.168.1.191:3001/livres', requestOptions).subscribe({
+    this.http.get('http://192.168.131.33:3001/livres', requestOptions).subscribe({
       next: data => {
         const resultats: any = data;
         // @ts-ignore
@@ -51,7 +52,8 @@ export class LivresService {
     const index = auteurs.findIndex(auteur => auteur.getAuteurId() === auteurId);
     const auteur = auteurs[index];
 
-    this.http.post('http://192.168.1.191:3001/livre', {
+    // this.http.post('http://192.168.1.191:3001/livre', {
+    this.http.post('http://192.168.131.33:3001/livre', {
       titre,
       genre,
       resume,
@@ -81,7 +83,8 @@ export class LivresService {
     const requestOptions = {
       headers
     };
-    this.http.delete('http://192.168.1.191:3001/livre/' + livreId, requestOptions).subscribe({
+    // this.http.delete('http://192.168.1.191:3001/livre/' + livreId, requestOptions).subscribe({
+    this.http.delete('http://192.168.131.33:3001/livre/' + livreId, requestOptions).subscribe({
       next: data => {
         const index = this.livres.findIndex(livre => livre.getLivreId() === livreId);
         this.livres.splice(index, 1);

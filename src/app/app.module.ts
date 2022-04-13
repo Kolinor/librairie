@@ -13,6 +13,9 @@ import {AuteursService} from "./services/auteurs/auteurs.service";
 import {LivresService} from "./services/livres/livres.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { ApmModule, ApmService } from '@elastic/apm-rum-angular';
+import { ErrorHandler } from '@angular/core';
+import { ApmErrorHandler } from '@elastic/apm-rum-angular';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,31 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ApmModule
   ],
   providers: [
     AuteursService,
-    LivresService
+    LivresService,
+    ApmService,
+    {
+      provide: ErrorHandler,
+      useClass: ApmErrorHandler
+    }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(service: ApmService) {
+    // Agent API is exposed through this apm instance
+    const apm = service.init({
+      serviceName: 'angular-app',
+      serverUrl: 'http://localhost:9200'
+    })
+
+    apm.setUserContext({
+      'username': 'admin',
+      'id': '1'
+    })
+  }
 }
